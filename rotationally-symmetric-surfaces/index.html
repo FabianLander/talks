@@ -53,10 +53,8 @@
 
       <section>
         <h3>Can we embed more?</h3>
-        <ul>
-          <li>Can we embed a larger piece of $\mathbb{H}^2/\mathbb{Z}$ if we drop rotational symmetry?</li>
-          <li>How would we find such an embedding?</li>
-        </ul>
+        <p>Can we embed a larger piece of $\mathbb{H}^2/\mathbb{Z}$?</p>
+        <p class="fragment">No. Not as a surface of revolution in $\mathbb{R}^3$.</p>
       </section>
 
       <section>
@@ -65,13 +63,21 @@
       </section>
 
       <section>
-        <p>An embedding $\Phi \colon \Sigma \to A$ is isometric if</p>
-        $$\Phi^* g_A = g$$
-        <p>where $g$ is the metric on $\Sigma$ and $g_A$ is the metric on the ambient space $A$.</p>
-        <p class="fragment"><strong>Bad news:</strong> generally this is a coupled system of PDEs.</p>
+        <h3>Two ideas</h3>
+        <ul>
+          <li><strong>A.</strong> Drop rotational symmetry, stay in $\mathbb{R}^3$</li>
+          <li><strong>B.</strong> Keep the symmetry, change the ambient 3-space</li>
+        </ul>
       </section>
 
-      <!-- === Paper === -->
+      <!-- === A. Drop symmetry === -->
+
+      <section>
+        <p>An embedding $\Phi \colon \Sigma \to A$ is isometric if</p>
+        $$\Phi^* g_A = g$$
+        <p>where $g$ is the metric on the rotationally symmetric surface $\Sigma$ and $g_A$ is the metric on the ambient space $A$.</p>
+        <p class="fragment"><strong>Bad news:</strong> generally this is a coupled system of PDEs.</p>
+      </section>
 
       <section>
         <h3>Paper</h3>
@@ -84,18 +90,13 @@
       <section data-background-iframe="demos/mesh-embedding/" data-background-interactive>
       </section>
 
-      <!-- === Symmetries === -->
-
-      <section>
-        <p>What if we keep the rotational symmetry...</p>
-        <p class="fragment">...and change the ambient 3-space instead?</p>
-      </section>
+      <!-- === B. Change ambient space === -->
 
       <!-- === Cylindrical coordinates === -->
 
       <section>
         <h3>Cylindrical coordinates</h3>
-        <p>Choose a geodesic $\gamma$ with an $S^1$ action by isometries. Define coordinates:</p>
+        <p>Choose a geodesic $\gamma$ with an $S^1$ action by isometries fixing it. Define coordinates:</p>
         $$\Phi(u, \theta) = \bigl(h(u),\; r(u),\; \theta\bigr)$$
         <ul>
           <li>$h(u)$: position along $\gamma$</li>
@@ -114,22 +115,13 @@
         </ul>
       </section>
 
-      <section data-auto-animate>
+      <section>
         <h3>Pullback</h3>
         $$\Phi^* g_A = \bigl(r'^2 + e(r)\, h'^2\bigr)\, du^2 + C(r)\, d\theta^2$$
-      </section>
-
-      <section data-auto-animate>
-        <h3>Pullback</h3>
-        $$\Phi^* g_A = \bigl(r'^2 + e(r)\, h'^2\bigr)\, du^2 + C(r)\, d\theta^2$$
-        <p>Set $\Phi^* g_A = g = \alpha(u)^2\, du^2 + \beta(u)^2\, d\theta^2$:</p>
-      </section>
-
-      <section data-auto-animate>
-        <h3>Pullback</h3>
-        $$\Phi^* g_A = \bigl(r'^2 + e(r)\, h'^2\bigr)\, du^2 + C(r)\, d\theta^2$$
-        <p>Set $\Phi^* g_A = g = \alpha(u)^2\, du^2 + \beta(u)^2\, d\theta^2$:</p>
+        <p class="fragment">Set $\Phi^* g_A = g = \alpha(u)^2\, du^2 + \beta(u)^2\, d\theta^2$:</p>
+        <div class="fragment">
         $$\begin{cases} h'(u) = \displaystyle\sqrt{\frac{\alpha(u)^2 - r'(u)^2}{e(r(u))}} \\[1em] r(u) = C^{-1}\bigl(\beta(u)\bigr) \end{cases}$$
+        </div>
       </section>
 
 
