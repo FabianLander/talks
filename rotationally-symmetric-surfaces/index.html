@@ -9,32 +9,178 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <style>
     .reveal h1, .reveal h2, .reveal h3 { text-transform: none; }
+    .reveal .title-slide { display: flex !important; flex-direction: column; height: 100%; }
+    .reveal .title-slide h2 { font-size: 1.4em; margin-top: auto; margin-bottom: auto; }
+    .title-footer { color: #aaa; font-size: 0.6em; line-height: 1.8; padding-bottom: 20px; }
   </style>
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
 
+      <section class="title-slide">
+        <h2>Embedding Rotationally Symmetric Surfaces Isometrically in 3D</h2>
+        <div class="title-footer">
+          Fabian Lander<br>
+          No-Senior Seminar — Illustration as a Mathematical Research Technique — IHP, March 4, 2026
+        </div>
+      </section>
+
+      <!-- === Motivation === -->
+
       <section>
-        <h2>Embedding Rotationally Symmetric Surfaces Isometrically in $\mathbb{R}^3$</h2>
-        <!-- <p>Your Name</p> -->
-        <!-- <p><small>Conference / Seminar — Date</small></p> -->
+        <img src="images/three_hyperbolic_surfaces.png" alt="Three simple hyperbolic surfaces">
+        <p class="fragment">Each admits an $S^1$ action by isometries.</p>
+        <p class="fragment">We call such a surface <em>rotationally symmetric</em>.</p>
       </section>
 
       <section>
-        <h3>Overview</h3>
+        <h3>The pseudosphere</h3>
+        <ul>
+          <li>Surface of revolution of the tractrix — has constant $K = -1$</li>
+          <li>$\{y \geq 1\}/\mathbb{Z} \subset \mathbb{H}^2$ embeds isometrically into $\mathbb{R}^3$ (Beltrami, 1868)</li>
+          <li>The full $\mathbb{H}^2/\mathbb{Z}$ is complete — does not embed in $\mathbb{R}^3$ (Hilbert, 1901)</li>
+          <!-- <li>Our running example</li> -->
+                   TODO: add image of Paris Est artwork
+
+        </ul>
+      </section>
+
+      <!-- === Dropping rotational symmetry === -->
+
+      <section>
+        <h3>Can we embed more?</h3>
+        <ul>
+          <li>Can we embed a larger piece of $\mathbb{H}^2/\mathbb{Z}$ if we drop rotational symmetry?</li>
+          <li>How would we find such an embedding?</li>
+          <li> TODO: add paper model of beltrami's ruffled pseudosphere </li> Eugenio Beltrami, Pseudosphere models, 1869–1872; Department of Mathematics-Pavia
+
+        </ul>
       </section>
 
       <section>
-        <h3>Setup</h3>
+        <p>An embedding $\Phi \colon \Sigma \to A$ is isometric if</p>
+        $$\Phi^* g_A = g$$
+        <p>where $g$ is the metric on $\Sigma$ and $g_A$ is the metric on the ambient space $A$.</p>
+        <p class="fragment"><strong>Bad news:</strong> generally this is a coupled system of PDEs.</p>
+      </section>
+
+      <!-- === Paper === -->
+
+      <section>
+        <h3>Paper</h3>
       </section>
 
       <section>
-        <h3>Main Result</h3>
+        <p>A way out: discretize and optimize</p>
+      </section>
+
+      <section data-background-iframe="demos/mesh-embedding/" data-background-interactive>
+      </section>
+
+      <!-- === Symmetries === -->
+
+      <section>
+        <p>What if we keep the rotational symmetry...</p>
+        <p class="fragment">...and change the ambient 3-space instead?</p>
+      </section>
+
+      <!-- === Cylindrical coordinates === -->
+
+      <section>
+        <h3>Cylindrical coordinates</h3>
+        <p>Choose a geodesic $\gamma$ with an $S^1$ action by isometries. Define coordinates:</p>
+        $$\Phi(u, \theta) = \bigl(h(u),\; r(u),\; \theta\bigr)$$
+        <ul>
+          <li>$h(u)$: position along $\gamma$</li>
+          <li>$r(u)$: distance orthogonal to $\gamma$</li>
+          <li>$\theta$: position on the circle</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Ambient metric</h3>
+        <p>Assume $\partial_h, \partial_r \perp \partial_\theta$. Then:</p>
+        $$g_A = dr^2 + e(r)\, dh^2 + C(r)\, d\theta^2$$
+        <ul>
+          <li>$C(r)$: circumference of $S^1$ orbits at distance $r$ from $\gamma$</li>
+          <li>$e(r)$: how distances along $\gamma$ stretch with $r$</li>
+        </ul>
+      </section>
+
+      <section data-auto-animate>
+        <h3>Pullback</h3>
+        $$\Phi^* g_A = \bigl(r'^2 + e(r)\, h'^2\bigr)\, du^2 + C(r)\, d\theta^2$$
+      </section>
+
+      <section data-auto-animate>
+        <h3>Pullback</h3>
+        $$\Phi^* g_A = \bigl(r'^2 + e(r)\, h'^2\bigr)\, du^2 + C(r)\, d\theta^2$$
+        <p>Set $\Phi^* g_A = g = \alpha(u)^2\, du^2 + \beta(u)^2\, d\theta^2$:</p>
+      </section>
+
+      <section data-auto-animate>
+        <h3>Pullback</h3>
+        $$\Phi^* g_A = \bigl(r'^2 + e(r)\, h'^2\bigr)\, du^2 + C(r)\, d\theta^2$$
+        <p>Set $\Phi^* g_A = g = \alpha(u)^2\, du^2 + \beta(u)^2\, d\theta^2$:</p>
+        $$\begin{cases} h'(u) = \displaystyle\sqrt{\frac{\alpha(u)^2 - r'(u)^2}{e(r(u))}} \\[1em] r(u) = C^{-1}\bigl(\beta(u)\bigr) \end{cases}$$
+      </section>
+
+
+      <!-- === Concrete geometries === -->
+
+      <section>
+        <h3>Space forms</h3>
+        <table style="font-size: 0.7em; margin: 0 auto;">
+          <thead><tr><th>Ambient space</th><th>$e(r)$</th><th>$C(r)$</th></tr></thead>
+          <tbody>
+            <tr><td>$\mathbb{E}^3$</td><td>$1$</td><td>$r^2$</td></tr>
+            <tr><td>$\mathbb{H}^3_\kappa$ &ensp; ($K = -\kappa^2$)</td><td>$\cosh^2(\kappa r)$</td><td>$\tfrac{1}{\kappa^2}\sinh^2(\kappa r)$</td></tr>
+            <tr><td>$\mathbb{S}^3_\kappa$ &ensp; ($K = +\kappa^2$)</td><td>$\cos^2(\kappa r)$</td><td>$\tfrac{1}{\kappa^2}\sin^2(\kappa r)$</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Embedding condition</h3>
+        <p>The pseudosphere embeds as long as</p>
+        $$\alpha(u)^2 - r'(u)^2 \geq 0$$
+        <p class="fragment">$\mathbb{E}^3$: embeds for $u \geq 0$ ($y \geq 1$) — recovers Beltrami.</p>
+        <p class="fragment">$\mathbb{H}^3_\kappa$: embeds further as $\kappa$ grows.</p>
+        <p class="fragment">$\mathbb{S}^3_\kappa$: embeds less.</p>
+      </section>
+
+      <!-- === Demos === -->
+
+      <section data-background-iframe="demos/tiled-pseudosphere/" data-background-interactive>
       </section>
 
       <section>
         <h3>Thank you</h3>
+      </section>
+
+      <!-- === Appendix === -->
+
+      <section>
+        <h3>Appendix: Beltrami and the pseudosphere</h3>
+        <ul>
+          <li>Beltrami (1868): recognized the pseudosphere as an isometric model of $\{y \geq 1\}/\mathbb{Z} \subset \mathbb{H}^2$</li>
+          <li>Also constructed paper models extending past the singular circle — no longer a surface of revolution, the surface must "ruffle"</li>
+          <li>Hilbert (1901): no complete $C^2$ isometric embedding of any surface of constant $K = -1$ into $\mathbb{R}^3$ — in particular $\mathbb{H}^2/\mathbb{Z}$ does not embed; the pseudosphere is optimal</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Appendix: The tractrix</h3>
+        <ul>
+          <li>Physical picture: drag a weight along a table on a string of length $a$, walking along a straight line — the weight traces the tractrix</li>
+          <li>Geometric property: the tangent segment from the curve to the asymptote has constant length $a$</li>
+          <li>Parametrically: $x(t) = t - \tanh t$, $\quad y(t) = \operatorname{sech} t$</li>
+          <li>Cusp at $(0, 1)$; asymptotes to the $x$-axis</li>
+          <li>Rotating around the asymptote gives the pseudosphere with $K = -1/a^2$</li>
+          <li>The cusp traces the singular circle of the pseudosphere, corresponding to $\{y = 1\}$ in the UHP</li>
+        </ul>
+
       </section>
 
     </div>
@@ -45,6 +191,8 @@
   <script>
     Reveal.initialize({
       hash: true,
+      transition: 'fade',
+      backgroundTransition: 'fade',
       math: {
         mathjax: null,
         katex: {
