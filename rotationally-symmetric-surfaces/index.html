@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Embedding Rotationally Symmetric Surfaces Isometrically in 3D</title>
+  <title>Rotationally Symmetric Surfaces in 3D</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
@@ -19,7 +19,7 @@
     <div class="slides">
 
       <section class="title-slide">
-        <h2>Embedding Rotationally Symmetric Surfaces Isometrically in 3D</h2>
+        <h2>Rotationally Symmetric Surfaces in 3D</h2>
         <div class="title-footer">
           Fabian Lander<br>
           No-Senior Seminar — Illustration as a Mathematical Research Technique — IHP, March 4, 2026
@@ -42,6 +42,10 @@
           <li>The full $\mathbb{H}^2/\mathbb{Z}$ is complete — does not embed in $\mathbb{R}^3$ (Hilbert, 1901)</li>
           <!-- <li>Our running example</li> -->
         </ul>
+      </section>
+
+      <section>
+        <img src="images/Screenshot 2026-03-04 at 07.59.21.png" alt="Tiled pseudosphere visualization" style="max-height: 500px;">
       </section>
 
       <section>
@@ -80,7 +84,6 @@
       </section>
 
       <section>
-        <h3>Paper</h3>
       </section>
 
       <section>
@@ -91,6 +94,10 @@
       </section>
 
       <!-- === B. Change ambient space === -->
+
+      <section>
+        <p><strong>Idea B.</strong> Keep the symmetry, change the ambient space</p>
+      </section>
 
       <!-- === Cylindrical coordinates === -->
 
@@ -128,7 +135,6 @@
       <!-- === Concrete geometries === -->
 
       <section>
-        <h3>Space forms</h3>
         <table style="font-size: 0.7em; margin: 0 auto;">
           <thead><tr><th>Ambient space</th><th>$e(r)$</th><th>$C(r)$</th></tr></thead>
           <tbody>
@@ -147,6 +153,18 @@
         <p class="fragment">$\mathbb{H}^3_\kappa$: embeds further as $\kappa$ grows.</p>
         <p class="fragment">$\mathbb{S}^3_\kappa$: embeds less.</p>
       </section>
+
+      <!--
+      <section>
+        <h3>Embedding condition (concrete)</h3>
+        <p>The pseudosphere embeds as long as $\alpha(u)^2 - r'(u)^2 \geq 0$:</p>
+        <ul>
+          <li>$\mathbb{E}^3$: $u \geq 0$ — recovers Beltrami.</li>
+          <li>$\mathbb{H}^3_\kappa$: $u \geq \tfrac{1}{2}\ln(1 - \kappa^2)$ for $\kappa < 1$; embeds completely for $\kappa \geq 1$.</li>
+          <li>$\mathbb{S}^3_\kappa$: $u \geq \tfrac{1}{2}\ln(1 + \kappa^2)$ — embeds less.</li>
+        </ul>
+      </section>
+      -->
 
       <!-- === Demos === -->
 
